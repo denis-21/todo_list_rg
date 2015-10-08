@@ -1,0 +1,19 @@
+git ---
+development:
+  cloud_name: djgeniyeh
+  api_key: '466636882765676'
+  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: djgeniyeh
+  api_key: '466636882765676'
+  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: djgeniyeh
+  api_key: '466636882765676'
+  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
+  enhance_image_tag: true
+  static_image_support: false

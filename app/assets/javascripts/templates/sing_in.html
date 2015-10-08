@@ -1,0 +1,27 @@
+<div class="dialog-form center-block login-form" ng-controller="SignInCtrl">
+  <h3 class="text-center">Sign In</h3>
+  <div class="alert_error text-center"></div>
+  <form id="sign-in-form"  ng-submit="login()">
+    <div class="form-group">
+      <label for="id_email">E-mail</label>
+      <input class="form-control" name="user[email]" id="id_email" ng-model="user.email" placeholder="Email" autofocus="true" type="email"/>
+    </div>
+    <div class="form-group">
+      <label for="id_password">Password</label>
+      <input class="form-control" name="user[password]" id="id_password" ng-model="user.password" autocomplete="off" placeholder="Password" type="password"/>
+    </div>
+    <button class="btn btn-default btn-block" type="submit">Sign In</button>
+
+    <a class="btn btn-social btn-facebook btn-block" href="/users/auth/facebook">
+      <i class="fa fa-facebook"></i>
+      Sign In Facebook
+    </a>
+    <!--<button class="btn btn-social btn-facebook btn-block" ng-click="authenticate('facebook')" type="button">
+      <i class="fa fa-facebook"></i>
+      Sign In Facebook
+    </button>-->
+    <div class="sign-up-block text-center">
+      <a class="btn-sign-up" href="/#/sign-up">Sign Up</a>
+    </div>
+  </form>
+</div>

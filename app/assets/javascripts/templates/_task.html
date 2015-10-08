@@ -1,0 +1,26 @@
+<div class="row">
+  <input id="task_status" ng-checked="task.status" ng-click="toggleTaskStatus(task.id,task.status, $index)" style="border-right: 1px solid #000;" type="checkbox"/>
+  <span ng-class="{'done': task.status == true}" class="task-title" editable-text="task.title" onaftersave="updateTask($data,task.id)">
+    {{ task.title }}
+  </span>
+  <div class="task-buttons pull-right">
+    <span class="glyphicon glyphicon-time"></span>
+    <span class="task_deadline" editable-date="task.deadline" onaftersave="updateDateTask($data,task.id)">
+      {{ (task.deadline | date: 'dd/MM') || 'set'}}
+    </span>
+    <i class="fa fa-comments" ng-click="activateTask(task)" ng-class="{'many':task.comments.length > 0}"></i>
+    <i class="fa fa-trash" ng-click="removeTask(task.id,$index)"></i>
+  </div>
+</div>
+<div class="comments" ng-if="activated_task == task">
+  <div ng-controller="CommentCtrl">
+      <comment class="toggle" ng-class="animation" ng-repeat="comment in comments"></comment>
+
+      <form class="form"   ng-submit="addComments()">
+        <div class="form-group" style="margin-top: 10px;">
+          <input class="form-control new_comment" ng-model="newComment" placeholder="text comment"/>
+        </div>
+        <button class="btn btn-sm btn-success" type="submit">Add comment</button>
+      </form>
+  </div>
+</div>

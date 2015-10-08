@@ -1,0 +1,33 @@
+<div class="project-header">
+  <div>
+    <i class="fa fa-calendar"></i>
+    <span class="project-title" editable-text="project.title" onaftersave="updateProject($data, project.id)">
+      {{ project.title }}
+    </span>
+    <div class="project-buttons pull-right">
+      <i class="fa fa-trash" ng-click="removeProject(project.id,$index)"></i>
+    </div>
+  </div>
+</div>
+<div ng-controller="TaskCtrl">
+    <div class="new-task">
+      <form class="form"  ng-submit="addTask()">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-success" type="submit">
+              <i class="fa fa-plus"></i>
+            </button>
+          </span>
+          <input class="input_new_task form-control input-sm" ng-model="newTask.title" placeholder="New task" type="text"/>
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-success btn-add-task" type="submit">Add task</button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="project-body">
+      <div ui-sortable="sortableOptions" ng-model="tasks" class="tasks">
+        <task class="slide-top"  ng-repeat="task in tasks"></task>
+      </div>
+    </div>
+</div>

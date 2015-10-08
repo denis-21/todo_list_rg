@@ -1,0 +1,26 @@
+<div class="row">
+  <span class="update_comment" editable-text="comment.text" onaftersave="updateComment($data,comment.id)">
+    {{ comment.text }}
+  </span>
+  <div class="comment-buttons pull-right">
+    <i class="fa fa-times remove_comment" ng-click="removeComment(comment.id,$index)"></i>
+  </div>
+</div>
+<div ng-repeat="files in comment.attached_files" style="margin-top: 10px;">
+    <a target="_blank" ng-href="{{files.attachment_url}}">
+        {{ files.attachment_identifier }}
+    </a>
+</div>
+
+<div ng-controller="UploadCtrl" style="margin-top: 10px;">
+  <button class="btn btn-warning btn-sm button_upload" ngf-select="uploadFiles($files, comment.id)" multiple ngf-max-height="1000" ngf-max-size="1MB">
+    Attach Files
+  </button>
+    <ul>
+        <li ng-repeat="f in files">{{f.name}} {{f.$error}} {{f.$errorParam}}
+          <span class="progress" ng-show="f.progress >= 0">
+             <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+          </span>
+        </li>
+    </ul>
+</div>

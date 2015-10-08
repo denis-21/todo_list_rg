@@ -1,0 +1,13 @@
+<logout></logout>
+
+<div ng-controller="ProjectsCtrl">
+
+    <div class="projects">
+      <project class="center-block slide-top" ng-class="animation"  ng-repeat="project in projects"></project>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-add-project center-block" ng-click="new_project()">
+      <i class="fa fa-plus"></i>
+      Add Project
+    </button>
+</div>
