@@ -4,8 +4,7 @@ app.factory 'CheckLogin', [
   '$state'
   (Auth, $state) ->
     ->
-      Auth.currentUser().then ((user) ->
-      ), (error) ->
-           $state.go 'signin'
+      if !Auth.isAuthenticated()
+        $state.go 'signin'
 
 ]

@@ -58,6 +58,9 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'poltergeist'
+  gem 'guard-rspec', git: "https://github.com/guard/guard-rspec.git"
+  gem "guard-teaspoon"
+  gem 'teaspoon-jasmine'
 end
 
 group :development do

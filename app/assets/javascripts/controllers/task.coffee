@@ -13,13 +13,13 @@ TaskCtrl = ($scope, Tasks, Task, CheckLogin, orderByFilter, toaster) ->
   $scope.addTask = ->
     Tasks.create {
       project_id: $scope.project.id
-      title: $scope.newTask.title
+      title: $scope.taskTitle
     }, (res) ->
       if res.message
         toaster.error res.message
       else
         $scope.tasks.push res.task
-        $scope.newTask = title: ''
+        $scope.taskTitle= ''
 
   $scope.updateTask = (data, id) ->
     Task.update {

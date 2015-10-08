@@ -11,6 +11,8 @@
     "ng-file-upload": "latest",
     "angular-ui-sortable": "latest",
     "angular-mocks": "latest",
-    "angularjs-toaster": "latest"
+    "angularjs-toaster": "latest",
+    "sinon": "latest",
+    "jasmine-sinon": "latest"
   }
 }
