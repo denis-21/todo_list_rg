@@ -2,8 +2,6 @@ app = angular.module('app')
 
 MainCtrl = ($scope, $state, Auth,$http) ->
 
-  if Auth._currentUser
-    $state.go 'projects'
 
   Auth.currentUser().then ((user) ->
     $state.go 'projects'
