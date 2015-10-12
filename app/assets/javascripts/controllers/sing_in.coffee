@@ -1,7 +1,7 @@
 app = angular.module('app')
 
 
-SignInCtrl = ($scope, $state, Auth, toaster) ->
+SignInCtrl = ($scope, $state, Auth, toaster,$http) ->
 
   $scope.user =
       email: ''
@@ -25,6 +25,8 @@ SignInCtrl = ($scope, $state, Auth, toaster) ->
     $state.go 'projects'
   $scope.$on 'devise:new-session', (event, currentUser) ->
 
+  $scope.$on 'devise:unauthorized', (event, xhr, deferred) ->
+    $state.go 'signin'
 
 
 
@@ -33,5 +35,6 @@ app.controller 'SignInCtrl', [
   '$state'
   'Auth'
   'toaster'
+  '$http'
   SignInCtrl
 ]

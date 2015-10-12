@@ -19,7 +19,6 @@ MainCtrl = ($scope, $state, Auth,$http) ->
   $scope.$on 'devise:new-session', (event, currentUser) ->
 
   $scope.$on 'devise:unauthorized', (event, xhr, deferred) ->
-    if $state.is('projects')
         $state.go 'signin'
 
 app.controller 'MainCtrl', [
