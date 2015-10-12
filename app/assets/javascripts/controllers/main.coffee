@@ -13,6 +13,8 @@ MainCtrl = ($scope, $state, Auth,$http) ->
     config = headers: 'X-HTTP-Method-Override': 'DELETE'
     Auth.logout(config).then ((oldUser) ->
     ), (error) ->
+    Auth.logout(config).then ((oldUser) ->
+    ), (error) ->
 
 
   $scope.$on 'devise:logout', (event, oldCurrentUser) ->
