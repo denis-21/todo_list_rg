@@ -1,19 +1,14 @@
-git ---
 development:
-  cloud_name: djgeniyeh
-  api_key: '466636882765676'
-  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
-  enhance_image_tag: true
-  static_image_support: false
+  cloud_name: "dysdga6x1"
+  api_key: "899932216464759"
+  api_secret: "JUx6pgGsSqYN5MlhbPGrrmJ3Zm8"
+
 production:
-  cloud_name: djgeniyeh
-  api_key: '466636882765676'
-  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
-  enhance_image_tag: true
-  static_image_support: true
+  cloud_name: "dysdga6x1"
+  api_key: "899932216464759"
+  api_secret: "JUx6pgGsSqYN5MlhbPGrrmJ3Zm8"
+
 test:
-  cloud_name: djgeniyeh
-  api_key: '466636882765676'
-  api_secret: fm_96DR6kpkatu4EufcpzwvDTks
-  enhance_image_tag: true
-  static_image_support: false
+  cloud_name: "dysdga6x1"
+  api_key: "899932216464759"
+  api_secret: "JUx6pgGsSqYN5MlhbPGrrmJ3Zm8"
