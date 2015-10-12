@@ -12,7 +12,7 @@ SignInCtrl = ($scope, $state, Auth, toaster,$http) ->
 
   config = headers: 'X-HTTP-Method-Override': 'POST'
   Auth.currentUser().then ((user) ->
-    $state.go 'projects'
+    $state.go 'signin'
   ), (error) ->
 
   $scope.login = ->
