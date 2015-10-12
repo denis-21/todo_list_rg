@@ -13,7 +13,7 @@ UploadCtrl = ($scope, Upload, $timeout,toaster) ->
       file.upload.then ((response) ->
         file.result = response.data
         aray = response.data.comments
-        $scope.comment.file_attachments.push(aray[aray.length - 1 ])
+        $scope.comment.attached_files.push(aray[aray.length - 1 ])
         toaster.success('File successfully uploaded')
       ), (response) ->
         if response.status > 0
