@@ -34,12 +34,6 @@ app.config [
 ]
 
 app.config [
-  '$httpProvider'
-  ($httpProvider) ->
-    $httpProvider.defaults.withCredentials = true
-]
-
-app.config [
   'AuthInterceptProvider'
   (AuthInterceptProvider) ->
     AuthInterceptProvider.interceptAuth(true);
