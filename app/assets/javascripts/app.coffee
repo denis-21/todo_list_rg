@@ -39,8 +39,11 @@ app.config [
     $httpProvider.defaults.withCredentials = true
 ]
 
-app.config (AuthInterceptProvider) ->
-  AuthInterceptProvider.interceptAuth(true);
+app.config [
+  'AuthInterceptProvider'
+  (AuthInterceptProvider) ->
+    AuthInterceptProvider.interceptAuth(true);
+]
 
 app.run(['$state','editableOptions','editableThemes',
   ($state, editableOptions, editableThemes) ->
