@@ -2,7 +2,6 @@ app = angular.module('app')
 
 
 TaskCtrl = ($scope, Tasks, Task, CheckLogin, orderByFilter, toaster) ->
-  CheckLogin()
   
   $scope.tasks = $scope.project.tasks
   angular.forEach $scope.tasks, (value, key) ->

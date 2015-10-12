@@ -7,6 +7,9 @@ SignInCtrl = ($scope, $state, Auth, toaster) ->
       email: ''
       password: ''
 
+  if Auth._currentUser
+    $state.go 'projects'
+
   config = headers: 'X-HTTP-Method-Override': 'POST'
   Auth.currentUser().then ((user) ->
       $state.go 'projects'
@@ -21,6 +24,7 @@ SignInCtrl = ($scope, $state, Auth, toaster) ->
   $scope.$on 'devise:login', (event, currentUser) ->
     $state.go 'projects'
   $scope.$on 'devise:new-session', (event, currentUser) ->
+
 
 
 

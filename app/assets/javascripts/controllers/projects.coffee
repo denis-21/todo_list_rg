@@ -2,7 +2,7 @@ app = angular.module('app')
 
 
 ProjectsCtrl = ($scope, $state, Auth, Projects, Project, CheckLogin, toaster) ->
-  CheckLogin()
+
 
   Projects.get (response) ->
     $scope.projects = response.projects

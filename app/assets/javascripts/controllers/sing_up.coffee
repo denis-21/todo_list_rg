@@ -7,15 +7,23 @@ SignUpCtrl = ($scope, $state, Auth, toaster) ->
     $state.go 'projects'
   $scope.user = {}
 
+
+
   $scope.signUp = ->
-    config = headers: 'X-HTTP-Method-Override': 'POST'
-    Auth.register($scope.user, config).then ((registeredUser) ->
-    ), (error) ->
-      angular.forEach error.data.errors, (msg, fill) ->
-        toaster.error fill + ' - ' + msg[0]
+
+    if !$scope.user.email || !$scope.user.password || $scope.user.password_confirmation?
+      config = headers: 'X-HTTP-Method-Override': 'POST'
+      Auth.register($scope.user, config).then ((registeredUser) ->
+                                                  console.log(registeredUser)
+      ), (error) ->
+        angular.forEach error.data.errors, (msg, fill) ->
+          toaster.error fill + ' - ' + msg[0]
+    else
+      toaster.error 'password confirmation - doesnt empty'
 
   $scope.$on 'devise:new-registration', (event, currentUser) ->
     $state.go 'projects'
+
 
 
 app.controller 'SignUpCtrl', [

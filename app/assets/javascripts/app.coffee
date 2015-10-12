@@ -32,12 +32,24 @@ app.config [
       controller: 'ProjectsCtrl'
     return
 ]
+
+app.config [
+  '$httpProvider'
+  ($httpProvider) ->
+    $httpProvider.defaults.withCredentials = true
+]
+
+app.config (AuthInterceptProvider) ->
+  AuthInterceptProvider.interceptAuth(true);
+
 app.run(['$state','editableOptions','editableThemes',
   ($state, editableOptions, editableThemes) ->
     editableThemes.bs3.inputClass = 'input-sm'
     editableThemes.bs3.buttonsClass = 'btn-sm'
     editableOptions.theme = 'bs3'
 ])
+
+
 app.directive 'project', ->
   { templateUrl: '_project.html' }
 app.directive 'task', ->

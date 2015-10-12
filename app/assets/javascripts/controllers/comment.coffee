@@ -1,7 +1,6 @@
 app = angular.module('app')
 
 CommentCtrl = ($scope, Comments, Comment, CheckLogin, toaster) ->
-  CheckLogin()
 
   $scope.comments = $scope.task.comments
 
