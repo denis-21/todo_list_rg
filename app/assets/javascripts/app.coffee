@@ -7,6 +7,7 @@ app = angular.module('app', [
   'ngFileUpload'
   'toaster'
   'ui.sortable'
+  'ngCookies'
 ])
 app.config [
   '$stateProvider'

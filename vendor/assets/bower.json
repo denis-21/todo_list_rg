@@ -13,6 +13,7 @@
     "angular-mocks": "latest",
     "angularjs-toaster": "latest",
     "sinon": "latest",
-    "jasmine-sinon": "latest"
+    "jasmine-sinon": "latest",
+    "angular-cookies": "latest"
   }
 }
