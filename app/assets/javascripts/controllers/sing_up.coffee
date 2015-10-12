@@ -14,7 +14,6 @@ SignUpCtrl = ($scope, $state, Auth, toaster) ->
   $scope.signUp = ->
     config = headers: 'X-HTTP-Method-Override': 'POST'
     Auth.register($scope.user, config).then ((registeredUser) ->
-      console.log(registeredUser)
     ), (error) ->
       angular.forEach error.data.errors, (msg, fill) ->
         toaster.error fill + ' - ' + msg[0]

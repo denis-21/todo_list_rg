@@ -1,7 +1,7 @@
 app = angular.module('app')
 
 
-ProjectsCtrl = ($scope, $state, Auth, Projects, Project, CheckLogin, toaster,$http) ->
+ProjectsCtrl = ($scope, $state, Auth, Projects, Project, CheckLogin, toaster) ->
 
 
   Projects.get (response) ->
@@ -39,6 +39,5 @@ app.controller 'ProjectsCtrl', [
   'Project'
   'CheckLogin'
   'toaster'
-  '$http'
   ProjectsCtrl
 ]
