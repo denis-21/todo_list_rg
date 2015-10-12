@@ -32,11 +32,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'angularjs-file-upload-rails'
 gem 'angular_rails_csrf'
-=begin
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end
-=end
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'font-awesome-rails'
