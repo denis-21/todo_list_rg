@@ -1,6 +1,6 @@
 app = angular.module('app')
 
-MainCtrl = ($scope, $state, Auth,$http,$cookies) ->
+MainCtrl = ($scope, $state, Auth,$http) ->
 
   Auth.currentUser().then ((user) ->
     $state.go 'projects'
@@ -9,7 +9,6 @@ MainCtrl = ($scope, $state, Auth,$http,$cookies) ->
   $scope.logout = ->
     config = headers: 'X-HTTP-Method-Override': 'DELETE'
     Auth.logout(config).then ((oldUser) ->
-                                  $cookies.remove('_todolist_session')
     ), (error) ->
 
 
@@ -27,6 +26,5 @@ app.controller 'MainCtrl', [
   '$state'
   'Auth'
   '$http'
-  '$cookies'
   MainCtrl
 ]
