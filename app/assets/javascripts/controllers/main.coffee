@@ -10,8 +10,6 @@ MainCtrl = ($scope, $state, Auth,$http) ->
   $scope.logout = ->
     config = headers: 'X-HTTP-Method-Override': 'DELETE'
     Auth.logout(config).then ((oldUser) ->
-                                Auth.logout(config).then ((oldUser) ->
-                                ), (error) ->
     ), (error) ->
 
 
