@@ -12,7 +12,7 @@ SignInCtrl = ($scope, $state, Auth, toaster,$http) ->
 
   config = headers: 'X-HTTP-Method-Override': 'POST'
   Auth.currentUser().then ((user) ->
-    $state.go 'signin'
+    $state.go 'projects'
   ), (error) ->
 
   $scope.login = ->
@@ -26,7 +26,8 @@ SignInCtrl = ($scope, $state, Auth, toaster,$http) ->
   $scope.$on 'devise:new-session', (event, currentUser) ->
 
   $scope.$on 'devise:unauthorized', (event, xhr, deferred) ->
-    $state.go 'signin'
+    if $state.is('projects') || $state.is('new_project')
+         $state.go 'signin'
 
 
 

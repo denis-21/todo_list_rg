@@ -12,7 +12,7 @@ app.config [
   '$stateProvider'
   '$urlRouterProvider'
   ($stateProvider, $urlRouterProvider) ->
-    $urlRouterProvider.otherwise '/sign-in'
+    $urlRouterProvider.otherwise '/projects'
     $stateProvider
     .state 'signin',
       url: '/sign-in'

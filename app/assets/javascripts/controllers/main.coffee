@@ -1,6 +1,6 @@
 app = angular.module('app')
 
-MainCtrl = ($scope, $state, Auth,$http) ->
+MainCtrl = ($scope, $state, Auth,$http,toaster) ->
 
 
   Auth.currentUser().then ((user) ->
@@ -19,12 +19,14 @@ MainCtrl = ($scope, $state, Auth,$http) ->
   $scope.$on 'devise:new-session', (event, currentUser) ->
 
   $scope.$on 'devise:unauthorized', (event, xhr, deferred) ->
-        $state.go 'signin'
+      if $state.is('projects') || $state.is('new_project')
+          $state.go 'signin'
 
 app.controller 'MainCtrl', [
   '$scope'
   '$state'
   'Auth'
   '$http'
+  'toaster'
   MainCtrl
 ]
