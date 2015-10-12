@@ -24,7 +24,6 @@
 //= require angular-ui-sortable/sortable
 //= require ng-file-upload/ng-file-upload
 //= require ng-file-upload-shim/ng-file-upload-shim
-//= require angular-cookies/angular-cookies
 
 //= require_tree ./templates
 //= require_tree .
