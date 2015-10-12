@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks',sessions: 'users/sessions'}
+  devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
 
 
   root 'home#index'
